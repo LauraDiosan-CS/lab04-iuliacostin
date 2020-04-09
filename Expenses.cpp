@@ -18,14 +18,14 @@
 
 using namespace std;
 
-Expenses::Expenses()
+Expense::Expense()
 {
     this->nrAp = 0;
     this->sum = 0;
     this->type = NULL;
 }
 
-Expenses::Expenses(int nrAp, int sum, char* type)
+Expense::Expense(int nrAp, int sum, char* type)
 {
     this->nrAp = nrAp;
     this->sum = sum;
@@ -33,7 +33,7 @@ Expenses::Expenses(int nrAp, int sum, char* type)
     strcpy(this->type, type);
 }
 
-Expenses::Expenses(const Expenses& e)
+Expense::Expense(const Expense& e)
 {
     cout << "copy constructor"<<endl;
     this->type = new char[strlen(e.type) + 1];
@@ -42,7 +42,7 @@ Expenses::Expenses(const Expenses& e)
     this->sum = e.sum;
 }
 
-Expenses::~Expenses()
+Expense::~Expense()
 {
     if (this->type)
     {
@@ -52,22 +52,22 @@ Expenses::~Expenses()
 }
 
 
-int Expenses::get_nrAp()
+int Expense::getNrAp()
 {
     return this->nrAp;
 }
 
-int Expenses::get_sum()
+int Expense::getSum()
 {
     return this->sum;
 }
 
-char* Expenses::get_type()
+char* Expense::getType()
 {
     return this->type;
 }
 
-void Expenses::set_type(char* type)
+void Expense::setType(char* type)
 {
     if (this->type) {
         delete[] this->type;
@@ -76,30 +76,30 @@ void Expenses::set_type(char* type)
     strcpy(this->type, type);
 }
 
-void Expenses::set_nrAp(int nrAp)
+void Expense::setNrAp(int nrAp)
 {
     this->nrAp = nrAp;
 }
 
-void Expenses::set_sum(int sum)
+void Expense::setSum(int sum)
 {
     this->sum = sum;
 }
 
-Expenses& Expenses::operator=(const Expenses& e)
+Expense& Expense::operator=(const Expense& e)
 {
-    this->set_type(e.type);
-    this->set_nrAp(e.nrAp);
-    this->set_sum(e.sum);
+    this->setType(e.type);
+    this->setNrAp(e.nrAp);
+    this->setSum(e.sum);
     return *this;
 }
 
-bool Expenses:: operator==(const Expenses& e)
+bool Expense:: operator==(const Expense& e)
 {
     return strcmp(this->type, e.type) == 0 && this->nrAp == e.nrAp && this->sum == e.sum;
 }
 
-ostream& operator<<(ostream& os, const Expenses& e)
+ostream& operator<<(ostream& os, const Expense& e)
 {
     os << e.nrAp << " " <<e.sum<<" "<<e.type;
     return os;

@@ -10,24 +10,24 @@
 #include <ostream>
 using namespace std;
 
-class Expenses
+class Expense
 {
 private:
     char* type;
     int nrAp;
     int sum;
 public:
-    Expenses();
-    Expenses(int nrAp, int sum, char* type);
-    Expenses(const Expenses& e);
-    ~Expenses();
-    char* get_type();
-    int get_nrAp();
-    int get_sum();
-    void set_type(char* type);
-    void set_nrAp(int nrAp);
-    void set_sum(int sum);
-    Expenses& operator=(const Expenses& e);
-    bool operator==(const Expenses& e);
-    friend ostream& operator<<(ostream& os, const Expenses& e);
+    Expense();
+    Expense(int nrAp, int sum, char* type);
+    Expense(const Expense& e);
+    ~Expense();
+    char* getType();
+    int getNrAp();
+    int getSum();
+    void setType(char* type);
+    void setNrAp(int nrAp);
+    void setSum(int sum);
+    Expense& operator=(const Expense& e);
+    bool operator==(const Expense& e);
+    friend ostream& operator<<(ostream& os, const Expense& e);
 };

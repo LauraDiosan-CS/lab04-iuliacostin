@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 
-void testRepo();
-
+void testGetSize();
+void testAddExpense();
+void testUpdateExpense();
+void testDeleteExpense();
 #endif /* TestRepo_hpp */

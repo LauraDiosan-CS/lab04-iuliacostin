@@ -12,14 +12,19 @@
 class Repo
 {
 private:
-    Expenses expenses[100];
+    Expense expenses[100];
     int n;
 public:
     Repo();
     ~Repo();
-    Expenses* getAll();
+    Expense* getAll();
     int getSize();
-    void insertExpenses(Expenses &e);
-    void addExpense(int nrAp, int sum, char* type);
+    void addExpense(Expense e);
+    void updateExpense(Expense e, int newNrAp, int newSum, char* newType);
+    void deleteExpense(Expense& e, int op);
+    int search(const Expense& e);
+    int searchNrAp(int nrAp);
+    int searchType(char* Type);
+    void setPosElem(int i, Expense& e);
 };
 
